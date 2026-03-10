@@ -35,6 +35,8 @@ public class ControlTablaMultiplicar {
 		VistaMenú menú;
 		int opción;
 		
+		cambiarTabla();
+		
 		menú=new VistaMenú("Tablas de multiplicar",OPCIONES_MENÚ_PRINCIPAL);
 		
 		do{
