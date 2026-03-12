@@ -84,17 +84,22 @@ public class VistaGeneral {
 	public static int pedirNúmero(String texto) {
 		int n;
 		Scanner in;
-		do {
-		try {
-		linea=in.readline();
-		n=Integer.parseInt();
+		boolean salir;
 		
 		in = getScEntrada();
-		}catch{
-			
-		}
-		}while(true);
-		System.out.printf("%s: ", texto);
+		
+		salir=false;
+		do {
+			try {
+				System.out.printf("%s: ", texto);
+				linea=in.readline();
+				n=Integer.parseInt();
+				salir=true;
+			}catch{
+				System.out.println("Introduzca un numero valido");
+			}
+		}while(!salir);
+		
 		return n;
 		
 		
@@ -108,8 +113,25 @@ public class VistaGeneral {
 		in.readline();
 	}
 	
+	/**
+	 * Solicita que el usuario confirme pulsando <Enter>
+	 * @param texto El texo el cual se requiere una confirmacion
+	 * @return	true ya que es valida una vez se ha pulsado <Enter> para continuar
+	 */
 	public boolean pedirConfirmación(String texto) {
-		return false;
+		Scanner Enter;
+		Enter = new Scanner(System.in);
+		String entrada;
+		entrada ="";
+		
+		 do{
+			System.out.println("PORFAVOR PRESIONE LA TECLA <ENTER>");
+		    entrada  = Enter.nextLine();
+		    System.out.println(entrada);
+		 }
+		 while(!entrada.equals("")); 
+		 System.out.println("SE PRESIONÓ LA TECLA ENTER");
+		 return true;
 	}
 	public void mostrarlista(List<String> lista) {
 		
