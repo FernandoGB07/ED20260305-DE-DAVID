@@ -1,7 +1,9 @@
 package jcolonia.daw2025.tablasmvc;
 /**
 * Lanzador de aplicación de consola de texto con menús. Aplicación
-* de texto usando tablas de multiplicar infantiles clásicas. 
+* de texto usando tablas de multiplicar infantiles clásicas.
+* @author <a href="mailto:fernando.garben@educa.jcyl.es">Fernando García Benito</a>
+* @version 1.01 (17/03/2026)
 */
 public class LanzadorTablaMultiplicar {
 	/**
