@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 /**
  * Clase con metodos generales muy usados
+ * @author <a href="mailto:fernando.garben@educa.jcyl.es">Fernando García Benito</a>
+ * @version 1.01 (17/03/2026)
  */
 public class VistaGeneral {
 	/**
@@ -44,7 +46,7 @@ public class VistaGeneral {
 	 * @param texto El aviso que se quiera mostrar segun la situación
 	 */
 	public void mostrarAviso(String texto) {
-		System.out.printf(FORMATO_PRINTF_MOSTRARTEXTO, ANSI_VERDE + texto + ANSI_NORMAL);
+		System.out.printf(FORMATO_PRINTF_MOSTRARAVISO, ANSI_VERDE + texto + ANSI_NORMAL);
 
 	}
 	
@@ -110,7 +112,7 @@ public class VistaGeneral {
 	
 	/**
 	 * Para el proceso si se necesita.
-	 * @param texto 
+	 * @param texto El texto que introduce el usuario.
 	 */
 	public void pausa(String texto) {
 		Scanner in;
@@ -140,10 +142,21 @@ public class VistaGeneral {
 		 System.out.println("SE PRESIONÓ LA TECLA ENTER");
 		 return true;
 	}
+	/**
+	 * Muestra la lista con los valores en cascada.
+	 * @param lista La lista con los valores.
+	 */
 	public void mostrarlista(List<String> lista) {
-		
+		for (String elemento : lista) {
+	        System.out.println(elemento);
+	    }
 	}
 	
+	/**
+	 * El scanner conjunto, que funciona como un solo scanner, pero en caso de que no se haya
+	 * creado, se crea, si esta creado lo vuelve a usar.
+	 * @return Vuelve a pedirle al usuario que introduzca algun valor.
+	 */
 	public static Scanner getScEntrada() {
 		if (scEntrada == null) {
 			scEntrada = new Scanner(System.in);

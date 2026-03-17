@@ -8,6 +8,8 @@ import java.util.List;
 
 	/**
 	 * La tabla de multiplicar del programa.
+	 * @author <a href="mailto:fernando.garben@educa.jcyl.es">Fernando García Benito</a>
+	 * @version 1.01 (17/03/2026)
 	 */
 	public class TablaMultiplicar {
 		/**
