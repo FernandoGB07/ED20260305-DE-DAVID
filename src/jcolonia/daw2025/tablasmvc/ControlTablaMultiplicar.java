@@ -2,6 +2,8 @@ package jcolonia.daw2025.tablasmvc;
 /**
 * Núcleo de aplicación de consola de texto con menús. Aplicación
 * de texto usando tablas de multiplicar infantiles clásicas. 
+* @author <a href="mailto:fernando.garben@educa.jcyl.es">Fernando García Benito</a>
+* @version 1.01 (14/03/2026)
 */
 public class ControlTablaMultiplicar {
 	/** Formato tipo «printf» para el nombre del archivo de
@@ -13,6 +15,9 @@ public class ControlTablaMultiplicar {
 	/** Tabla de multiplicar activa. */
 	private TablaMultiplicar tabla;
 
+	/**
+	 * Actua como el constructor principal de la clase ControlTablaMultiplicar
+	 */
 	public ControlTablaMultiplicar(){
 		init();
 	}
