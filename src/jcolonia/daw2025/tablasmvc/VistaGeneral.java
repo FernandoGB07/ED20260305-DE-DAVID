@@ -83,8 +83,10 @@ public class VistaGeneral {
 	 */
 	public static int pedirNúmero(String texto) {
 		int n;
+		n = 0;
 		Scanner in;
 		boolean salir;
+		String linea;
 		
 		in = getScEntrada();
 		
@@ -92,15 +94,16 @@ public class VistaGeneral {
 		do {
 			try {
 				System.out.printf("%s: ", texto);
-				linea=in.readline();
-				n=Integer.parseInt();
+				linea=in.nextLine();
+				n=Integer.parseInt(linea);
 				salir=true;
-			}catch{
+			}catch (NumberFormatException e){
 				System.out.println("Introduzca un numero valido");
 			}
 		}while(!salir);
-		
 		return n;
+		
+		
 		
 		
 	}
@@ -110,7 +113,11 @@ public class VistaGeneral {
 	 * @param texto 
 	 */
 	public void pausa(String texto) {
-		in.readline();
+		Scanner in;
+	
+		
+		in = getScEntrada();
+		in.nextLine();
 	}
 	
 	/**
