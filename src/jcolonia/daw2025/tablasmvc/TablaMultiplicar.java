@@ -10,7 +10,13 @@ import java.util.List;
 	 * La tabla de multiplicar del programa.
 	 */
 	public class TablaMultiplicar {
+		/**
+		 * El Numero el cual se hara la tabla de multiplicar
+		 */
 		private int numero;
+		/**
+		 * Lista de ejemplo basica para multiples metodos, que se usara para listar datos.
+		 */
 		private List<String> listaTextos;
 	
 		/**
