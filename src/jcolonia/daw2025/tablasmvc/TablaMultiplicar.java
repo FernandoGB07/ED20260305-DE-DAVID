@@ -28,7 +28,7 @@ import java.util.List;
 			this.listaTextos = new ArrayList<>();
 		}
 		/**
-		 * 
+		 * Genera la Tabla de multiplicar con el numero que se haya elegido.
 		 */
 		public void generarTabla() {
 			listaTextos.clear();
