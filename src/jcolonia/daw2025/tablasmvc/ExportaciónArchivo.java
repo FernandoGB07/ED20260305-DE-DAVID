@@ -12,9 +12,9 @@ import java.util.List;
  */
 public class ExportaciónArchivo {
 	/**
-     * Guarda la lista de textos en un archivo con el nombre facilitado.
+     * Guarda la lista de textos en un archivo txt
      * @param nombreArchivo El nombre del destino.
-     * @param datos La lista de líneas a escribir.
+     * @param datos La lista de líneas que se escribiran.
      * @throws ExcepcionesES Si ocurre un error de escritura (archivo no encontrado, etc.)
      */
     public static void guardar(String nombreArchivo, List<String> datos) throws ExcepcionesES {
