@@ -24,7 +24,7 @@ public class VistaGeneral {
 	/**
 	 * Pone el texto en negrita
 	 */
-	String ANSI_NEGRITA = "\u001B[1m";
+	static String ANSI_NEGRITA = "\u001B[1m";
     /**
      * Deja los futuros textos de forma normal, para evitar errores.
      */
@@ -54,22 +54,25 @@ public class VistaGeneral {
 	 * Muestra el título.
 	 * @param texto El titulo subrayado.
 	 */
-	public void mostrarTítulo(String texto) {
-		for(int i=0; i < texto.length();i++) {
-			System.out.print("_");
-		}
-		System.out.println(ANSI_NEGRITA + texto + ANSI_NORMAL);
-		for(int i=0; i < texto.length();i++) {
-			System.out.print("_");
-		}
-		System.out.println();
+	public static void mostrarTítulo(String texto) {
+	    for (int i = 0; i < texto.length(); i++) {
+	        System.out.print("_");
+	    }
+	    System.out.println(); 
+
+	    System.out.println(ANSI_NEGRITA + texto + ANSI_NORMAL);
+
+	    for (int i = 0; i < texto.length(); i++) {
+	        System.out.print("_");
+	    }
+	    System.out.println("\n"); 
 	}
 	
 	/**
 	 * Muestra un leve subtitulo.
 	 * @param texto EL subtitulo que se quiera mostrar.
 	 */
-	public void mostrarTítulo2(String texto) {
+	public static void mostrarTítulo2(String texto) {
 		System.out.println(texto);
 		for(int i=0; i < texto.length();i++) {
 			System.out.print("_");
@@ -114,7 +117,7 @@ public class VistaGeneral {
 	 * Para el proceso si se necesita.
 	 * @param texto El texto que introduce el usuario.
 	 */
-	public void pausa(String texto) {
+	public static void pausa(String texto) {
 		Scanner in;
 	
 		
@@ -127,7 +130,7 @@ public class VistaGeneral {
 	 * @param texto El texo el cual se requiere una confirmacion
 	 * @return	true ya que es valida una vez se ha pulsado <Enter> para continuar
 	 */
-	public boolean pedirConfirmación(String texto) {
+	public static boolean pedirConfirmación(String texto) {
 		Scanner Enter;
 		Enter = new Scanner(System.in);
 		String entrada;
@@ -146,7 +149,7 @@ public class VistaGeneral {
 	 * Muestra la lista con los valores en cascada.
 	 * @param lista La lista con los valores.
 	 */
-	public void mostrarlista(List<String> lista) {
+	public static void mostrarlista(List<String> lista) {
 		for (String elemento : lista) {
 	        System.out.println(elemento);
 	    }
