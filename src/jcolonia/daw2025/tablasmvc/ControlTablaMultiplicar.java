@@ -40,7 +40,8 @@ public class ControlTablaMultiplicar {
 	* tabla activa.
 	*/
 	public void init(){
-		cambiarTabla();
+		VistaGeneral.mostrarTítulo("Tablas de multiplicar");
+		
 	}
 
 	/**
@@ -87,7 +88,12 @@ public class ControlTablaMultiplicar {
 	* Muestra por pantalla -envía a la salida estándar-
 	* los productos correspondientes a la tabla activa.
 	*/
-	private void mostrarTabla(){}
+	private void mostrarTabla(){
+		List<String> datosArchivo;
+		
+		datosArchivo = tabla.toListaPantalla();
+		VistaGeneral.mostrarlista(datosArchivo);
+	}
 	
 	/**
 	* Cambia la tabla activa por otra elegida por el usuario.
@@ -95,9 +101,10 @@ public class ControlTablaMultiplicar {
 	private void cambiarTabla(){
 		int n = 0;
 		
-		VistaGeneral.pedirNúmero("Introduzca el número para la tabla");
+		n = VistaGeneral.pedirNúmero("Introduzca el número para cambiar la tabla");
 		
 		tabla=new TablaMultiplicar(n);
+		System.out.printf("Estamos en la tabla del: %d%n", n);
 		tabla.generarTabla();
 	}
 
@@ -105,13 +112,32 @@ public class ControlTablaMultiplicar {
 	* Envía a un archivo
 	* los productos correspondientes a la tabla activa.
 	*/
-	private void exportarTabla(){}
+	private void exportarTabla(){
+		String nombreArchivo;
+	    List<String> datos;
+
+	    nombreArchivo = String.format(FORMATO_RUTA_ARCHIVO_EXPORTACIÓN, tabla.getNúmero());
+
+	    try {
+	        datos = tabla.toListaExportación("");
+
+	        ExportaciónArchivo.guardar(nombreArchivo, datos);
+
+	        VistaGeneral.mostrarAviso("Exportación completada correctamente.");
+
+	    } catch (ExcepcionesES e) {
+	        VistaGeneral.mostrarAviso("Error al exportar la tabla: " + e.getMessage());
+	    }
+	}
+	
 	
 	/**
 	 * Muestra un mensaje de aviso indicando que 
 	 * la opción elegida no está disponible.
 	*/
-	private void opciónNoDisponible(){}
+	private void opciónNoDisponible(){
+		VistaGeneral.mostrarAviso("La Opción elegida no esta disponible");
+	}
 
 
 
