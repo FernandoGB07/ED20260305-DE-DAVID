@@ -11,8 +11,17 @@ import java.util.Scanner;
  */
 public class VistaMenú extends VistaGeneral {
 	
+	/**
+	 * El mensaje que se mandara cuando se solicite un numero
+	 */
 	private static final String INDICADOR_ENTRADA = "Introduce el numero solicitado: ";
+	/**
+	 * El mensaje que se lanzara cuando se introduzca un numero fuera de rango
+	 */
 	private static final String FORMATO_FUERA_DE_RANGO = "*** Por favor, ¡escriba un numero entre %d y %d!%n";
+	/**
+	 * Solicita al usuario una de las opciones.
+	 */
 	private static Scanner scIn;
 	
 	
@@ -39,6 +48,9 @@ public class VistaMenú extends VistaGeneral {
 
     
 
+    /**
+     * Imprime las distintas opciones del menú
+     */
     public void mostrarOpciones() {
 		int contador;
 		
@@ -52,6 +64,11 @@ public class VistaMenú extends VistaGeneral {
        
     
 
+    /**
+     * Lanza un texto personalizado que indica que se ponga
+     * un numero para elegir opción que se requiera. 
+	 * @return número de opción elegido
+     */
     public int pedirOpción() {
 		int opciónElegida = 0;
 		int mín, máx;
