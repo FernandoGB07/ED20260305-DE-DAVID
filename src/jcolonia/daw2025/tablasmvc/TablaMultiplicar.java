@@ -48,9 +48,10 @@ import java.util.List;
 		}
 		/**
 	     * Devuelve la lista de strings para que se guarde en el archivo.
+		 * @param string 
 		 * @return La Lista con los textos
 	     */
-		public List<String> toListaExportación () {
+		public List<String> toListaExportación (String string) {
 			return new ArrayList<>(listaTextos);			
 		}
 		
@@ -59,15 +60,29 @@ import java.util.List;
 		 * @return Devuelve la lista de Strings
 	     */
 		public List<String> toListaPantalla () {
-			return listaTextos;
+			List<String> listaPantalla = new ArrayList<>();
+			String formato;
 			
-		}
+			for (int i = 1; i <= 10; i++) {
+				int resultado = numero * i;
+				formato = String.format("%d + %d = %d", numero, i, resultado);
+				listaPantalla.add(formato);
+			}
+			
+			return listaPantalla;
+		}	
 		/**
 	     * Enseña la tabla del numero indicado.
 		 * @return La tabla del numero indicado
 	     */
 		public String toString() {
-			return "Tabla del " + numero;
+			String texto = "";
+			
+			for (String linea : listaTextos) {
+				texto += linea + "/n";
+			}
+			
+			return texto;
 		}
 	}
 
