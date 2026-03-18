@@ -24,11 +24,11 @@ public class VistaMenú extends VistaGeneral {
 	 */
 	private static Scanner scIn;
 	
+	static {
+		scIn = new Scanner(System.in);
+	}
 	
-    /**
-     * El titulo que se pondra en el Menú
-     */
-    private String título;
+	
     /**
      * Las posibles opciones que saldran en el Menú
      */
@@ -41,7 +41,6 @@ public class VistaMenú extends VistaGeneral {
      * @param opciones Las distintas opciones que se mostraran en el Menú.
      */
     public VistaMenú(String título, List<String> opciones) {
-        this.título = título;
         this.opciones = new ArrayList<String>(opciones);
 
     }
@@ -87,7 +86,6 @@ public class VistaMenú extends VistaGeneral {
 				 opciónElegida = Integer.parseInt(línea);
 				if(opciónElegida<mín||opciónElegida>máx) {
 					System.out.printf(FORMATO_FUERA_DE_RANGO, mín, máx);
-					// throw new NumberFormatException("Valor fuera de Rango");
 				}else {
 					salir = true;
 				}
