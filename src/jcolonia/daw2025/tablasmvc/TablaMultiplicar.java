@@ -1,8 +1,6 @@
 package jcolonia.daw2025.tablasmvc;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +27,15 @@ import java.util.List;
 			this.numero= numero;
 			this.listaTextos = new ArrayList<>();
 		}
+		
+		/**
+		 * Devuelve el número del que se ha hecho la {@link TablaMultiplicar}. 
+		 * @return número El número del que se ha hecho la {@link TablaMultiplicar}. 
+		 */
+		public int getNúmero() {
+			return numero;
+		}
+		
 		/**
 		 * Genera la Tabla de multiplicar con el numero que se haya elegido.
 		 */
