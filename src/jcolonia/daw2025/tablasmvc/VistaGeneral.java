@@ -12,11 +12,11 @@ public class VistaGeneral {
 	/**
 	 * Muestra el Texto
 	 */
-	private String FORMATO_PRINTF_MOSTRARTEXTO;
+	private final static String FORMATO_PRINTF_MOSTRARTEXTO= "%s%n";
 	/**
 	 * Muestra el Aviso
 	 */
-	private String FORMATO_PRINTF_MOSTRARAVISO;
+	private final static String  FORMATO_PRINTF_MOSTRARAVISO = "\033[32m *** %s *** \033[m%n";;
 	/**
 	 * La entrada que dara el usuario a el metodo
 	 */
@@ -28,16 +28,16 @@ public class VistaGeneral {
     /**
      * Deja los futuros textos de forma normal, para evitar errores.
      */
-    String ANSI_NORMAL = "\u001B[0m";
+    static String ANSI_NORMAL = "\u001B[0m";
     /**
      * Pone el texto en color verde.
      */
-    String ANSI_VERDE = "\u001B[32m";
+    static String ANSI_VERDE = "\u001B[32m";
 	/**
 	 * Muestra el texto que se quiera representar
 	 * @param texto El texto deseado
 	 */
-	public void mostrarTexto(String texto) {
+	public static void mostrarTexto(String texto) {
 		System.out.printf(FORMATO_PRINTF_MOSTRARTEXTO,texto);
 	}
 	
@@ -45,7 +45,7 @@ public class VistaGeneral {
 	 * Muestra un aviso en caso de que surga algun problema o inconveniente
 	 * @param texto El aviso que se quiera mostrar segun la situación
 	 */
-	public void mostrarAviso(String texto) {
+	public static void mostrarAviso(String texto) {
 		System.out.printf(FORMATO_PRINTF_MOSTRARAVISO, ANSI_VERDE + texto + ANSI_NORMAL);
 
 	}
