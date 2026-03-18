@@ -46,7 +46,7 @@ public class VistaGeneral {
 	 * @param texto El aviso que se quiera mostrar segun la situación
 	 */
 	public static void mostrarAviso(String texto) {
-		System.out.printf(FORMATO_PRINTF_MOSTRARAVISO, ANSI_VERDE + texto + ANSI_NORMAL);
+		System.out.printf(FORMATO_PRINTF_MOSTRARAVISO, ANSI_VERDE + texto);
 
 	}
 	
