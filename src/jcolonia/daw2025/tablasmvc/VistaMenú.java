@@ -1,36 +1,83 @@
 package jcolonia.daw2025.tablasmvc;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
+/**
+ * Clase que actua como un menú con su titulo y opciones.
+ * @author <a href="mailto:fernando.garben@educa.jcyl.es">Fernando García Benito</a>
+ * @version 1.01 (23/01/2026)
+ */
 public class VistaMenú extends VistaGeneral {
-    private String titulo;
+	
+	private static final String INDICADOR_ENTRADA = "Introduce el numero solicitado: ";
+	private static final String FORMATO_FUERA_DE_RANGO = "*** Por favor, ¡escriba un numero entre %d y %d!%n";
+	private static Scanner scIn;
+	
+	
+    /**
+     * El titulo que se pondra en el Menú
+     */
+    private String título;
+    /**
+     * Las posibles opciones que saldran en el Menú
+     */
     private List<String> opciones;
 
+    /**
+     * Contructor principal de la clase VistaMenú, Genera el Menú
+     * con el titulo y las opciones.
+     * @param título El titulo del programa
+     * @param opciones Las distintas opciones que se mostraran en el Menú.
+     */
     public VistaMenú(String título, List<String> opciones) {
-        this.titulo = título;
-        this.opciones = opciones;
+        this.título = título;
+        this.opciones = new ArrayList<String>(opciones);
+
     }
 
-    public void mostrArtítulo() {
-        super.mostrarTítulo(titulo);
-    }
+    
 
     public void mostrarOpciones() {
-        if (opciones != null) {
-            for (String linea : opciones) {
-                System.out.println(linea);
-            }
-        }
+		int contador;
+		
+		contador = 1;
+		for (int i=0; i< opciones.size(); i++) {
+			System.out.printf("   %d) %s%n", contador, opciones.get(i));
+			contador ++;
+		}
+		System.out.println("   0) Salir");
     }
+       
+    
 
     public int pedirOpción() {
-        mostrArtítulo();
-        mostrarOpciones();
-        return VistaGeneral.pedirNúmero("Seleccione una opcion");
-    }
-
-    @Override
-    public void mostrarTexto(String texto) {
-        super.mostrarTexto(texto);
-    }
+		int opciónElegida = 0;
+		int mín, máx;
+		String línea;
+		boolean salir; 
+		
+		mín = 0;
+		máx = opciones.size();
+		
+		salir= false;
+		
+		do {
+			try {
+				System.out.print(INDICADOR_ENTRADA);
+				 línea= scIn.nextLine();
+				 opciónElegida = Integer.parseInt(línea);
+				if(opciónElegida<mín||opciónElegida>máx) {
+					System.out.printf(FORMATO_FUERA_DE_RANGO, mín, máx);
+					// throw new NumberFormatException("Valor fuera de Rango");
+				}else {
+					salir = true;
+				}
+			} catch (NumberFormatException e) {
+				System.out.printf(FORMATO_FUERA_DE_RANGO, mín, máx);
+			}
+		}while(!salir);	
+		return opciónElegida;
+	}
 }
