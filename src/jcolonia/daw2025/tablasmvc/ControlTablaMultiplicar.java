@@ -18,11 +18,11 @@ public class ControlTablaMultiplicar {
 	/**
 	 * El array con las opciones del Menu
 	 */
-	public static final String[] OPCIONES_MENÚ_PRINCIPAL = {
+	public static final List<String> OPCIONES_MENÚ_PRINCIPAL = List.of(
 			"Mostrar tabla", 
 			"Cambiar de tabla", 
 			"Exportar tabla"
-		};
+		);
 	
 	/** Tabla de multiplicar activa. */
 	private TablaMultiplicar tabla;
